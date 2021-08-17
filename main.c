@@ -15,7 +15,6 @@ int main()
 	char *prompt = "cuchufli% ";
 	char *line;
 	int input = 0;
-	int i = 0;
 	size_t lineSize = 0;
 	char **tokenizado = NULL;
 
