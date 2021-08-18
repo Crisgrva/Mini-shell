@@ -29,17 +29,23 @@ int count_words(char *str)
 
 char **token(char *s)
 {
-	int i, cword;
+	int i;
+	int cword;
 	char **splited_words = NULL;
 
 	cword = count_words(s);
 	splited_words = malloc(sizeof(char *) * cword);
+	if (splited_words == NULL)
+	{
+		perror("./hsh");
+		return (NULL);
+	}
+	splited_words[0] = strtok(s, " \n");
 
-	splited_words[0] = strtok(s, " ");
+	for (i = 1; i < cword; i++)
+	{
+		splited_words[i] = strtok(NULL, " \n");
+	}
 
-	for (i = 1; i <= cword; i++)
-		splited_words[i] = strtok(NULL, " ");
-
-	splited_words[i] = NULL;
 	return (splited_words);
 }
