@@ -14,7 +14,7 @@ int fork_process(char *path, char **tokens, char **environ)
 	{
 		if (execve(path, tokens, environ) == -1)
 		{
-			perror("ESTOY EN EL EXECVE");
+			perror("./hsh");
 			return (1);
 		}
 	}

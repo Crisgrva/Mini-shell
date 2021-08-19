@@ -6,7 +6,7 @@
  * Return: On success always 0
  */
 
-int main()
+int main(void)
 {
 	char *prompt = "cuchufli% ";
 	int input = 0, (*funct)();
@@ -15,14 +15,18 @@ int main()
 
 	while (1)
 	{
-		write(STDOUT_FILENO, prompt, _strlen(prompt));
-		input = getline(&line, &line_size, stdin);
+		if (isatty(STDIN_FILENO) == 1)
+		{
+			write(STDOUT_FILENO, prompt, _strlen(prompt));
+			input = getline(&line, &line_size, stdin);
+		}
+		else
+			input = getline(&line, &line_size, stdin);
 
 		if (input == -1)
 		{
 			if (errno == EINVAL || errno == ENOMEM)
 				perror("./hsh");
-			write(1, "\n", 1);
 			free(line);
 			return (0);
 		}
@@ -45,10 +49,11 @@ int main()
 		}
 
 		path = find_path(tokens);
+
 		if (path == NULL)
 		{
 			perror("./hsh");
-			return (-1);
+			continue;
 		}
 
 		if (fork_process(path, tokens, environ) == 1)

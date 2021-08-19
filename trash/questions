@@ -1,4 +1,5 @@
 1. No encontramos error Command not found;
 2. El error debe imprimir "./hsh"?;
    ° Se hardcodea en el perror? i.e perror("./hsh");
-3.    
+3. Cuando eja vaina falla, tenemos que retornar, hacer exit, con qué numerito.
+   Return(-1)? exit(EXIT_FAILURE)?
