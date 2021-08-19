@@ -1,37 +1,35 @@
 #include "main.h"
 
-extern char **environ;
-extern int errno;
+/**
+ * main - UNIX command line interpreter.
+ * Usage: simple_shell
+ * Return: On success always 0
+ */
 
 int main()
 {
 	char *prompt = "cuchufli% ";
-	int input = 0;
-	int child = 0;
-	char *line = NULL;
-	size_t lineSize = -1;
-	char **tokens = NULL;
-
-	extern int errno;
+	int input = 0, (*funct)();
+	char *line = NULL, **tokens = NULL;
+	size_t line_size = 0;
 
 	while (1)
 	{
 		write(STDOUT_FILENO, prompt, _strlen(prompt));
+		input = getline(&line, &line_size, stdin);
 
-		input = getline(&line, &lineSize, stdin);
-
-		/* Si getline falla se libera line y termina el programa */
 		if (input == -1)
 		{
 			if (errno == EINVAL || errno == ENOMEM)
-			{
 				perror("./hsh");
-			}
 			write(1, "\n", 1);
 			free(line);
 			return (0);
 		}
-		tokens = token(line);
+
+		tokens = token(line, " \n");
+
+		find_path(tokens);
 
 		if (tokens == NULL)
 		{
@@ -40,25 +38,16 @@ int main()
 			return (1);
 		}
 
-		child = fork();
-		if (child < 0)
+		funct = get_builtin(tokens[0]);
+		if (funct != NULL)
 		{
+			if (funct() == 1)
+				return (0);
+			continue;
+		}
+
+		if (fork_process(tokens[0], tokens, environ) == 1)
 			return (1);
-		}
-		if (child == 0)
-		{
-			if (execve(tokens[0], tokens, environ) == -1)
-			{
-				free(line);
-				perror("./hsh");
-				return (1);
-			}
-		}
-		else
-		{
-			wait(NULL);
-			free(tokens);
-		}
 	}
 	return (0);
 }
