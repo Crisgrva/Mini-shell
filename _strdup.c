@@ -21,6 +21,11 @@ char *_strdup(char *str)
 	i++;
 
 	new_s = malloc(i * sizeof(char));
+    if (new_s == NULL)
+    {
+        perror("./hsh");
+        return(NULL);
+    }    
 
 	if (i == 0 || new_s == 0)
 		return (NULL);

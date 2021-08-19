@@ -10,7 +10,7 @@ int main()
 {
 	char *prompt = "cuchufli% ";
 	int input = 0, (*funct)();
-	char *line = NULL, **tokens = NULL;
+	char *line = NULL, **tokens = NULL, *path;
 	size_t line_size = 0;
 
 	while (1)
@@ -29,8 +29,6 @@ int main()
 
 		tokens = token(line, " \n");
 
-		find_path(tokens);
-
 		if (tokens == NULL)
 		{
 			free(tokens);
@@ -46,7 +44,14 @@ int main()
 			continue;
 		}
 
-		if (fork_process(tokens[0], tokens, environ) == 1)
+		path = find_path(tokens);
+		if (path == NULL)
+		{
+			perror("./hsh");
+			return (-1);
+		}
+
+		if (fork_process(path, tokens, environ) == 1)
 			return (1);
 	}
 	return (0);

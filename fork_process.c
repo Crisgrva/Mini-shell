@@ -1,6 +1,6 @@
 #include "main.h"
 
-int fork_process(char *token, char **tokens, char **environ)
+int fork_process(char *path, char **tokens, char **environ)
 {
 	int child = 0;
 
@@ -12,9 +12,9 @@ int fork_process(char *token, char **tokens, char **environ)
 	}
 	if (child == 0)
 	{
-		if (execve(tokens[0], tokens, environ) == -1)
+		if (execve(path, tokens, environ) == -1)
 		{
-			perror("./hsh");
+			perror("ESTOY EN EL EXECVE");
 			return (1);
 		}
 	}

@@ -1,0 +1,4 @@
+1. No encontramos error Command not found;
+2. El error debe imprimir "./hsh"?;
+   ° Se hardcodea en el perror? i.e perror("./hsh");
+3.    

@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <errno.h>
 #include <stddef.h>
+#include <unistd.h>
 
 /* MACROS */
 extern char **environ;
@@ -24,7 +25,7 @@ char *_strcat(char *dest, char *src);
 
 char **token(char *s, char *delim);
 int (*get_builtin(char *string))();
-int fork_process(char *token, char **tokens, char **environ);
+int fork_process(char *path, char **tokens, char **environ);
 char *find_path(char **tokens);
 
 /* BUILT-INS */
