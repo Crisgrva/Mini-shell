@@ -2,15 +2,14 @@
 
 /**
  * _strdup -  returns a pointer to a newly allocated space in memory.
- * @str: string
- * Return: Always 0.
+ * @str: string to be copied.
+ * Return: Duplicated string in success.
  */
 
 char *_strdup(char *str)
 {
-	int i;
-	int j = 0;
-	char *new_s;
+	int i = 0, j = 0;
+	char *new_s = NULL;
 
 	if (str == NULL)
 		return (NULL);
@@ -21,11 +20,11 @@ char *_strdup(char *str)
 	i++;
 
 	new_s = malloc(i * sizeof(char));
-    if (new_s == NULL)
-    {
-        perror("./hsh");
-        return(NULL);
-    }    
+	if (new_s == NULL)
+	{
+		perror("./hsh");
+		return (NULL);
+	}
 
 	if (i == 0 || new_s == 0)
 		return (NULL);

@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * find_path - function that searches the PATH in env
- * Return:
+ * find_path - function that searches the PATH in user environment,
+ * tokenize the PATH, concatenates the command to every tokenized path
+ * and checks if the command exists.
+ * @tokens: An array of pointers with all arguments.
+ * Return: if command exists, returns the full path.
  */
 
 char *find_path(char **tokens)
 {
-	int i = 0;
-	int j = 0;
-	char *path = NULL;
-	char *new_path = NULL;
-	char **path_tokenized = NULL;
+	int i = 0, j = 0;
+	char *path = NULL, *new_path = NULL, **path_tokenized = NULL;
 
 	for (i = 0; environ[i]; i++)
 	{
@@ -22,7 +22,7 @@ char *find_path(char **tokens)
 		}
 	}
 
-	path_tokenized = token(path, "=:");
+	path_tokenized = tokenizer(path, "=:");
 
 	for (j = 1; path_tokenized[j]; j++)
 	{
@@ -32,8 +32,10 @@ char *find_path(char **tokens)
 
 		if (access(new_path, F_OK) == 0)
 		{
+			free(path);
 			return (new_path);
 		}
 	}
+	free(path);
 	return (NULL);
 }

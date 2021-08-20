@@ -2,4 +2,16 @@
 2. El error debe imprimir "./hsh"?;
    ° Se hardcodea en el perror? i.e perror("./hsh");
 3. Cuando eja vaina falla, tenemos que retornar, hacer exit, con qué numerito.
-   Return(-1)? exit(EXIT_FAILURE)?
+   Return(-1)? exit(EXIT_FAILURE)? == exit(EXIT_FAILURE)
+4. Cómo le pasamos el argumento 0 a perror si no deja poner argumentos.
+5. Cómo liberar el malloc del getline
+
+respuestas:
+1. Imprimir con write. 
+Not found, no permission.
+Una función que nos imprima el error: recibe el doble puntero con "not found" o "no permission"
++ un contador de errores.
+
+2. Cualquiera de las dos, más bonito el EXIT_FAILURE.
+
+3. 

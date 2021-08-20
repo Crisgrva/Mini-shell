@@ -10,10 +10,12 @@
 #include <errno.h>
 #include <stddef.h>
 #include <unistd.h>
+/*------------------*/
 
 /* MACROS */
 extern char **environ;
 extern int errno;
+/*------------------*/
 
 /* PROTOTYPES */
 int _strlen(char *string);
@@ -23,31 +25,41 @@ int count_words(char *str);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 
-char **token(char *s, char *delim);
+char **tokenizer(char *s, char *delim);
 int (*get_builtin(char *string))();
 int fork_process(char *path, char **tokens, char **environ);
 char *find_path(char **tokens);
+/*------------------*/
 
 /* BUILT-INS */
 int _own_exit(void);
 int env(void);
 
+/*------------------*/
+
 /*STRUCTURES*/
+
+/**
+*struct builtin - builtin structures.
+*@name: a char with a name of a file.
+*@func: a int that call.
+*/
+
 typedef struct builtin
 {
-    char *name;
-    int (*func)();
+	char *name;
+	int (*func)();
 } built_in;
 
 static const built_in list[] = {
-    {"env", env},
-    {"exit", _own_exit},
-    {NULL, NULL}};
-
+	{"env", env},
+	{"exit", _own_exit},
+	{NULL, NULL}};
+/*------------------*/
 
 /* TRASH */
-// const char *_strstr(const char *X, const char *Y);
-// int _compare(const char *X, const char *Y);
-
+/* const char *_strstr(const char *X, const char *Y);*/
+/* int _compare(const char *X, const char *Y);*/
+/*------------------*/
 
 #endif

@@ -8,9 +8,8 @@
 
 int main(void)
 {
-	char *prompt = "cuchufli% ";
+	char *prompt = "cuchufli% ", *line = NULL, **tokens = NULL, *path = NULL;
 	int input = 0, (*funct)();
-	char *line = NULL, **tokens = NULL, *path;
 	size_t line_size = 0;
 
 	while (1)
@@ -31,14 +30,10 @@ int main(void)
 			return (0);
 		}
 
-		tokens = token(line, " \n");
+		tokens = tokenizer(line, " \n");
 
 		if (tokens == NULL)
-		{
-			free(tokens);
-			free(line);
-			return (1);
-		}
+			continue;
 
 		funct = get_builtin(tokens[0]);
 		if (funct != NULL)
@@ -48,13 +43,18 @@ int main(void)
 			continue;
 		}
 
-		path = find_path(tokens);
-
-		if (path == NULL)
+		if (access(tokens[0], F_OK) != 0)
 		{
-			perror("./hsh");
-			continue;
+			path = find_path(tokens);
+			if (path == NULL)
+			{
+				free(path);
+				perror("./hsh");
+				continue;
+			}
 		}
+		else
+			path = tokens[0];
 
 		if (fork_process(path, tokens, environ) == 1)
 			return (1);

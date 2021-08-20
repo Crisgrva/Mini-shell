@@ -1,16 +1,24 @@
 #include "main.h"
 
-char *_strncmp(char *PATH, char *MATCH, size_t n)
+/**
+* _strncmp - function that compares two strings.
+* @path: string 1 to compare.
+* @match: string 2 to compare.
+* @n: number of characteres to take into account.
+* Return: 0 if strings are equal, 1 if strings are different.
+*/
+
+char *_strncmp(char *path, char *match, size_t n)
 {
-	while (n && *PATH && (*PATH == *MATCH))
+	while (n && *path && (*path == *match))
 	{
-		++PATH;
-		++MATCH;
+		++path;
+		++match;
 		--n;
 	}
 	if (n == 0)
 	{
-		return (PATH);
+		return (path);
 	}
 	else
 	{
