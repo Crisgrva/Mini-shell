@@ -1,0 +1,6 @@
+1.  echo "ls
+    pwd" | ./hsh
+
+2.  echo "ls" | ./hsh
+3.  echo "ls -la .." | ./hsh
+4.  echo "pwd" | ./hsh

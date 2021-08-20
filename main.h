@@ -10,9 +10,11 @@
 #include <errno.h>
 #include <stddef.h>
 #include <unistd.h>
+#include <signal.h>
 /*------------------*/
 
 /* MACROS */
+#define SIGINT 2
 extern char **environ;
 extern int errno;
 /*------------------*/
@@ -24,17 +26,19 @@ char *_strncmp(char *PATH, char *MATCH, size_t n);
 int count_words(char *str);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
+char *_itoa(int i, char *strout, int base);
 
 char **tokenizer(char *s, char *delim);
 int (*get_builtin(char *string))();
 int fork_process(char *path, char **tokens, char **environ);
 char *find_path(char **tokens);
+char *prompt(void);
+void handle_sigint(int sig);
 /*------------------*/
 
 /* BUILT-INS */
 int _own_exit(void);
 int env(void);
-
 /*------------------*/
 
 /*STRUCTURES*/

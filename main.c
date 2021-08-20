@@ -8,30 +8,19 @@
 
 int main(void)
 {
-	char *prompt = "cuchufli% ", *line = NULL, **tokens = NULL, *path = NULL;
-	int input = 0, (*funct)();
-	size_t line_size = 0;
+	char *line = NULL, **tokens = NULL, *path = NULL, *strerrnum = NULL;
+	int (*funct)(), numerr = 0;
+	char buffer[1024];
 
 	while (1)
 	{
-		if (isatty(STDIN_FILENO) == 1)
-		{
-			write(STDOUT_FILENO, prompt, _strlen(prompt));
-			input = getline(&line, &line_size, stdin);
-		}
-		else
-			input = getline(&line, &line_size, stdin);
+		signal(SIGINT, handle_sigint);
+		line = prompt();
 
-		if (input == -1)
-		{
-			if (errno == EINVAL || errno == ENOMEM)
-				perror("./hsh");
-			free(line);
+		if (line == NULL)
 			return (0);
-		}
 
 		tokens = tokenizer(line, " \n");
-
 		if (tokens == NULL)
 			continue;
 
@@ -49,7 +38,13 @@ int main(void)
 			if (path == NULL)
 			{
 				free(path);
-				perror("./hsh");
+				numerr++;
+				strerrnum = _itoa(numerr, buffer, 16);
+				write(1, "./hsh: ", 8);
+				write(1, strerrnum, _strlen(strerrnum));
+				write(1, ": ", 2);
+				write(1, tokens[0], _strlen(tokens[0]));
+				write(1, ": not found\n", 13);
 				continue;
 			}
 		}

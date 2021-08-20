@@ -4,7 +4,7 @@
  * tokenizer - Function that split a string.
  * @s: string to split.
  * @delim: words delimiter.
- * Return: a char pointer that contains splited words.
+ * Return: a char double pointer that contains splited words.
  */
 
 char **tokenizer(char *s, char *delim)
