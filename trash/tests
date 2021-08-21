@@ -1,6 +1,19 @@
-1.  echo "ls
-    pwd" | ./hsh
+echo "ls
+pwd" | ./hsh
 
-2.  echo "ls" | ./hsh
-3.  echo "ls -la .." | ./hsh
-4.  echo "pwd" | ./hsh
+echo "ls" | ./hsh
+
+echo "ls -la .." | ./hsh
+
+echo "pwd" | ./hsh
+
+echo "" | ./hsh
+
+echo "
+" | ./hsh
+echo "  " | ./hsh
+
+
+echo "      " | ./hsh
+
+echo "      echo hola" | ./hsh

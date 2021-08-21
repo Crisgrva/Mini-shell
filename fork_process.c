@@ -15,17 +15,12 @@ int fork_process(char *path, char **tokens, char **environ)
 
 	child = fork();
 	if (child < 0)
-	{
-		perror("./hsh");
 		return (1);
-	}
+
 	if (child == 0)
 	{
 		if (execve(path, tokens, environ) == -1)
-		{
-			perror("./hsh");
 			return (1);
-		}
 	}
 	else
 	{
