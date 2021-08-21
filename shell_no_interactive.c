@@ -10,22 +10,18 @@
 
 int shell_no_interactive(int ac, char **av)
 {
-	char *line = NULL, **tokens = NULL, *path = NULL;
+	char *line = NULL, **tokens = NULL, *path = NULL, *name_file = av[ac - 1];
 	int (*funct)(), numerr = 0;
-	char *name_file = av[ac - 1];
 
 	while (1)
 	{
 		signal(SIGINT, handle_sigint);
-
 		line = prompt_no_interactive(name_file);
 		if (line == NULL)
 			return (0);
-
 		tokens = tokenizer(line, " \n");
 		if (tokens == NULL)
 			continue;
-
 		funct = get_builtin(tokens[0]);
 		if (funct != NULL)
 		{
@@ -33,7 +29,6 @@ int shell_no_interactive(int ac, char **av)
 				return (0);
 			continue;
 		}
-
 		if (access(tokens[0], F_OK) != 0)
 		{
 			path = find_path(tokens);
@@ -47,7 +42,6 @@ int shell_no_interactive(int ac, char **av)
 		}
 		else
 			path = tokens[0];
-
 		if (fork_process(path, tokens, environ) == 1)
 		{
 			numerr++;

@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
 * get_builtin - Function that look for a builtin (env, exit, etc).
 * @string: string to be evaluated as builtin.
 * Return: A function associated with the builtin name (success).
 */
+
 int (*get_builtin(char *string))()
 {
 	unsigned int j = 0;

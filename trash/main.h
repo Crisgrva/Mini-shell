@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-static char *test[20];
+const char *new_arrays[3];
 void free_all(void);
 
 #endif

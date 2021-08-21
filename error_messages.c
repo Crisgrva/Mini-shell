@@ -9,17 +9,17 @@
 
 void path_error(int numerr, char **tokens, char *name_file)
 {
-    char *strerrnum = NULL;
-    char buffer[1024];
+	char *strerrnum = NULL;
+	char buffer[1024];
 
-    strerrnum = _itoa(numerr, buffer, 10);
-    write(1, name_file, _strlen(name_file));
-    write(1, ": ", 2);
-    write(1, strerrnum, _strlen(strerrnum));
-    write(1, ": ", 2);
-    write(1, tokens[0], _strlen(tokens[0]));
-    write(1, ": ", 2);
-    write(1, "not found\n", 11);
+	strerrnum = _itoa(numerr, buffer, 10);
+	write(1, name_file, _strlen(name_file));
+	write(1, ": ", 2);
+	write(1, strerrnum, _strlen(strerrnum));
+	write(1, ": ", 2);
+	write(1, tokens[0], _strlen(tokens[0]));
+	write(1, ": ", 2);
+	write(1, "not found\n", 11);
 }
 
 /**
@@ -31,15 +31,15 @@ void path_error(int numerr, char **tokens, char *name_file)
 
 void permission_error(int numerr, char **tokens, char *name_file)
 {
-    char *strerrnum = NULL;
-    char buffer[1024];
+	char *strerrnum = NULL;
+	char buffer[1024];
 
-    strerrnum = _itoa(numerr, buffer, 10);
-    write(1, name_file, _strlen(name_file));
-    write(1, ": ", 2);
-    write(1, strerrnum, _strlen(strerrnum));
-    write(1, ": ", 2);
-    write(1, tokens[0], _strlen(tokens[0]));
-    write(1, ": ", 2);
-    perror("");
+	strerrnum = _itoa(numerr, buffer, 10);
+	write(1, name_file, _strlen(name_file));
+	write(1, ": ", 2);
+	write(1, strerrnum, _strlen(strerrnum));
+	write(1, ": ", 2);
+	write(1, tokens[0], _strlen(tokens[0]));
+	write(1, ": ", 2);
+	perror("");
 }

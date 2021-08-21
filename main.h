@@ -19,8 +19,6 @@
 extern char **environ;
 extern int errno;
 
-/* Macro definitoria de Max */
-
 /*---------------------------------------------------------*/
 
 /* PROTOTYPES */
@@ -76,12 +74,5 @@ static const built_in list[] = {
 	{"exit", _own_exit},
 	{NULL, NULL}};
 
-/*---------------------------------------------------------*/
-
-/* TRASH */
-/* const char *_strstr(const char *X, const char *Y);*/
-/* int _compare(const char *X, const char *Y);*/
-
-/*---------------------------------------------------------*/
 
 #endif

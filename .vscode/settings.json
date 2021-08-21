@@ -3,6 +3,7 @@
         "*.c": "c",
         "sstream": "c",
         "random": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "stdio.h": "c"
     }
 }

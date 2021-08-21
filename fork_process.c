@@ -16,8 +16,6 @@ int fork_process(char *path, char **tokens, char **environ)
 	child = fork();
 	if (child < 0)
 	{
-		free(path);
-		free(tokens);
 		return (1);
 	}
 
@@ -25,15 +23,12 @@ int fork_process(char *path, char **tokens, char **environ)
 	{
 		if (execve(path, tokens, environ) == -1)
 		{
-			free(path);
-			free(tokens);
 			return (1);
 		}
 	}
 	else
 	{
 		wait(NULL);
-		free(path);
 	}
 
 	return (0);

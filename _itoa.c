@@ -2,8 +2,8 @@
 
 /**
  * _strrev - Function that reverse a string
- * @str: A string
- * Return: A value type char
+ * @str: string to reverse
+ * Return: reversed string
  */
 
 char *_strrev(char *str)

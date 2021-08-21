@@ -10,10 +10,10 @@
 
 int main(int ac, char **av)
 {
-    if(isatty(STDIN_FILENO) == 1)
+	if (isatty(STDIN_FILENO) == 1)
 		shell_interactive();
 	else
 		shell_no_interactive(ac, av);
 
-    return (0);
+	return (0);
 }

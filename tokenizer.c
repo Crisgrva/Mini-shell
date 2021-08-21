@@ -33,6 +33,5 @@ char **tokenizer(char *s, char *delim)
 	{
 		splited_words[i] = strtok(NULL, delim);
 	}
-
 	return (splited_words);
 }
