@@ -48,6 +48,7 @@ int shell_no_interactive(int ac, char **av)
 			permission_error(numerr, tokens, name_file);
 			continue;
 		}
+		numerr++;
 	}
 	return (0);
 }

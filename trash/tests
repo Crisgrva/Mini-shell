@@ -17,3 +17,9 @@ echo "  " | ./hsh
 echo "      " | ./hsh
 
 echo "      echo hola" | ./hsh
+
+echo "pwd
+ls
+whoami
+/sys
+head -1 main.c" | ./hsh

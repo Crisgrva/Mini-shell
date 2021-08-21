@@ -46,6 +46,7 @@ int shell_interactive(void)
 			permission_error(numerr, tokens, name_file);
 			continue;
 		}
+		numerr++;
 	}
 	return (0);
 }
