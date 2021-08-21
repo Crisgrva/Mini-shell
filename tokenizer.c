@@ -9,8 +9,7 @@
 
 char **tokenizer(char *s, char *delim)
 {
-	int i = 0;
-	int cword = 0;
+	int i = 0, cword = 0;
 	char **splited_words = NULL;
 
 	cword = count_words(s);
@@ -19,7 +18,6 @@ char **tokenizer(char *s, char *delim)
 	if (splited_words == NULL)
 	{
 		free(splited_words);
-		perror("./hsh");
 		return (NULL);
 	}
 

@@ -38,6 +38,7 @@ int shell_interactive(void)
 			if (path == NULL)
 			{
 				free(path);
+				free(line);
 				numerr++;
 				path_error(numerr, tokens, name_file);
 				continue;
@@ -48,10 +49,13 @@ int shell_interactive(void)
 
 		if (fork_process(path, tokens, environ) == 1)
 		{
+			free(line);
 			numerr++;
 			permission_error(numerr, tokens, name_file);
 			continue;
 		}
+		free(line);
+		free(tokens);
 	}
 	return (0);
 }

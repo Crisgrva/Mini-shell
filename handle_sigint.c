@@ -12,4 +12,6 @@ void handle_sigint(int sig)
 
 	write(1, "\n", 1);
 	write(STDOUT_FILENO, prompt, _strlen(prompt));
+
+	(void)sig;
 }

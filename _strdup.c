@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _strdup -  returns a pointer to a newly allocated space in memory.
+ * _strdup -  function that duplicates a string
+ * in a newly allocated space in memory.
  * @str: string to be copied.
  * Return: Duplicated string in success.
  */
@@ -14,12 +15,10 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; str[i]; i++)
-	{
-	}
-	i++;
+	i = _strlen(str);
 
-	new_s = malloc(i * sizeof(char));
+	new_s = malloc(sizeof(char) * (i + 1));
+
 	if (new_s == NULL)
 	{
 		perror("./hsh");
@@ -29,11 +28,11 @@ char *_strdup(char *str)
 	if (i == 0 || new_s == 0)
 		return (NULL);
 
-	while (j < i)
+	while (j < (i + 1))
 	{
 		new_s[j] = str[j];
 		j++;
 	}
-	new_s[j] = '\0';
+
 	return (new_s);
 }

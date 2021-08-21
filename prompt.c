@@ -49,6 +49,7 @@ char *prompt_interactive(char *name_file)
 		}
 		write(1, "\n", 1);
 		free(line);
+		line_size = 0;
 		return (NULL);
 	}
 	return (line);

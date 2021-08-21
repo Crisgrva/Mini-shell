@@ -10,8 +10,9 @@
 
 char *find_path(char **tokens)
 {
-	int i = 0, j = 0;
-	char *path = NULL, *new_path = NULL, **path_tokenized = NULL;
+	int i = 0, j = 1;
+	char *path = NULL, *new_path = NULL, **path_tokenized = NULL, *realloc_path = NULL;
+	size_t length_newpath = 0;
 
 	for (i = 0; environ[i]; i++)
 	{
@@ -27,15 +28,36 @@ char *find_path(char **tokens)
 	for (j = 1; path_tokenized[j]; j++)
 	{
 		new_path = _strdup(path_tokenized[j]);
-		_strcat(new_path, "/");
-		_strcat(new_path, tokens[0]);
-
-		if (access(new_path, F_OK) == 0)
+		if (new_path == NULL)
 		{
 			free(path);
-			return (new_path);
+			free(new_path);
+			return (NULL);
+		}
+		length_newpath = (_strlen(tokens[0]) + _strlen(new_path) + 2);
+		realloc_path = realloc(new_path, length_newpath);
+		if (realloc_path == NULL)
+		{
+			free(path);
+			free(new_path);
+			return (NULL);
+		}
+		_strcat(realloc_path, "/");
+		_strcat(realloc_path, tokens[0]);
+
+		if (access(realloc_path, F_OK) == 0)
+		{
+			free(path);
+			/* Free(new_path) forbiden -> Valgrind */
+			return (realloc_path);
+		}
+		else
+		{
+			/* free(new_path); forbiden -> Valgrind*/
+			free(realloc_path);
 		}
 	}
+	/* free(realloc_path); forbiden -> Valgrind*/
 	free(path);
 	return (NULL);
 }

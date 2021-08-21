@@ -12,7 +12,7 @@ void path_error(int numerr, char **tokens, char *name_file)
     char *strerrnum = NULL;
     char buffer[1024];
 
-    strerrnum = _itoa(numerr, buffer, 16);
+    strerrnum = _itoa(numerr, buffer, 10);
     write(1, name_file, _strlen(name_file));
     write(1, ": ", 2);
     write(1, strerrnum, _strlen(strerrnum));
@@ -34,7 +34,7 @@ void permission_error(int numerr, char **tokens, char *name_file)
     char *strerrnum = NULL;
     char buffer[1024];
 
-    strerrnum = _itoa(numerr, buffer, 16);
+    strerrnum = _itoa(numerr, buffer, 10);
     write(1, name_file, _strlen(name_file));
     write(1, ": ", 2);
     write(1, strerrnum, _strlen(strerrnum));
