@@ -33,9 +33,12 @@ char *find_path(char **tokens)
 		if (access(new_path, F_OK) == 0)
 		{
 			free(path);
+			free(path_tokenized);
 			return (new_path);
 		}
+		free(new_path);
 	}
 	free(path);
+	free(path_tokenized);
 	return (NULL);
 }

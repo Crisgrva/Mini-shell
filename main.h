@@ -44,6 +44,7 @@ char *find_path(char **tokens);
 char *prompt_no_interactive(char *name_file);
 char *prompt_interactive(char *name_file);
 void handle_sigint(int sig);
+void free_all(char **tokens);
 
 /*-----Error_messages-----*/
 void path_error(int numerr, char **tokens, char *name_file);
