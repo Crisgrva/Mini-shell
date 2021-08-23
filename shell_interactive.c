@@ -9,20 +9,25 @@
 int shell_interactive(void)
 {
 	char *line = NULL, **tokens = NULL, *path = NULL, *name_file = "./hsh";
-	int (*funct)(), numerr = 0;
+	int (*funct)(), num_process = 0;
 
 	while (1)
 	{
-		signal(SIGINT, handle_sigint);
+	/*	signal(SIGINT, handle_sigint);*/
 		line = prompt_interactive(name_file);
 		if (line == NULL)
 			return (0);
-		tokens = tokenizer(line, " \n");
+		tokens = tokenizer(line, " \n\t");
 		if (tokens == NULL)
+		{
+			free(line);
 			continue;
+		}
 		funct = get_builtin(tokens[0]);
 		if (funct != NULL)
 		{
+			free(tokens);
+			free(line);
 			if (funct() == 1)
 				return (0);
 			continue;
@@ -33,20 +38,26 @@ int shell_interactive(void)
 			if (path == NULL)
 			{
 				free(path);
-				numerr++;
-				path_error(numerr, tokens, name_file);
+				num_process++;
+				path_error(num_process, tokens, name_file);
+				free_all(tokens);
 				continue;
 			}
 		}
 		else
-			path = tokens[0];
+			path = _strdup(tokens[0]);
 		if (fork_process(path, tokens, environ) == 1)
 		{
-			numerr++;
-			permission_error(numerr, tokens, name_file);
-			continue;
+			num_process++;
+			permission_error(num_process, tokens, name_file);
+			free(tokens);
+			free(path);
+			free(line);
+			return (1);
 		}
-		numerr++;
+		free(tokens);
+		free(line);
+		num_process++;
 	}
 	return (0);
 }
