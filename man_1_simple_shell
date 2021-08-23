@@ -7,12 +7,12 @@
 .SH SYNOPSIS
 .PD 0
 .TP
-\fBSimple_shell\fP [-command] [-o option]...
+\fBSimple_shell\fP [-command] [-o option] [file]...
 .PD
 
 .SH DESCRIPTION
 
-\fBSimple_shell\fP is a UNIX command interpreter  (shell)  usable  as  an  interactive login  shell  and as a shell script command processor. Execute commands read from a command line string, the standard input, or a specified file.
+\fBSimple_shell\fP is a UNIX command interpreter  (shell)  usable  as  an  interactive login  shell  and as a shell script command processor. Execute commands from a command line string, the standard input, or a specified file.
 
 .SH AVAILABILITY
 Simple_shell is available from the following HTTP
