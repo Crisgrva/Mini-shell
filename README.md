@@ -5,12 +5,13 @@ In this project we were assigned to make a functional Shell, with its basic comm
 
 ## Table of contents
 ***
-1. [General info] (#general-info)
-2. [How to install?] (#how_to_install)
-3. [Files of our Shell!] (#files_of_our_shell)
-4. [Commands that works!] (#commands_that_works)
-5. [Test cases!] 
-6. [Authors!]
+1. [General info](#general-info)
+2. [How to install?](#How-to-install?)
+3. [Files of our Shell!](#Files-of-our-Shell!)
+4. [Commands that works!](#Commands-that-works!)
+5. [Test cases!](#Test-cases!)
+6. [Authors!](#Authors!)
+
 ***
 
 ## General info
@@ -198,7 +199,7 @@ Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
 <a href = 'https://www.github.com/yazgiraldoa'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a>
 
 **Cristian Granada** - @Crisgrva -
-<a href = 'https://www.twitter.com/@Crisgrvc'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/twitter.svg"/></a>
+<a href = 'https://www.twitter.com/@Crisgrva'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/twitter.svg"/></a>
 <a href = 'https://github.com/Crisgrva'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a>
 
 **Ibethe Ramada** - @IbetheRamada -

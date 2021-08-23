@@ -19,7 +19,7 @@ int shell_no_interactive(int ac, char **av)
 		line = prompt_no_interactive(name_file);
 		if (line == NULL)
 			return (0);
-		tokens = tokenizer(line, " \n");
+		tokens = tokenizer(line, " \n\t");
 		if (tokens == NULL)
 			continue;
 		funct = get_builtin(tokens[0]);
@@ -46,7 +46,7 @@ int shell_no_interactive(int ac, char **av)
 		{
 			numerr++;
 			permission_error(numerr, tokens, name_file);
-			continue;
+			return (1);
 		}
 		numerr++;
 	}

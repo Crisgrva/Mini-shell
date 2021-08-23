@@ -17,7 +17,7 @@ int shell_interactive(void)
 		line = prompt_interactive(name_file);
 		if (line == NULL)
 			return (0);
-		tokens = tokenizer(line, " \n");
+		tokens = tokenizer(line, " \n\t");
 		if (tokens == NULL)
 			continue;
 		funct = get_builtin(tokens[0]);
@@ -44,7 +44,7 @@ int shell_interactive(void)
 		{
 			numerr++;
 			permission_error(numerr, tokens, name_file);
-			continue;
+			return (1);
 		}
 		numerr++;
 	}

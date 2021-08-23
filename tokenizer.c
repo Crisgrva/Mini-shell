@@ -17,7 +17,7 @@ char **tokenizer(char *s, char *delim)
 	splited_words = malloc(sizeof(char *) * (cword + 1));
 	if (splited_words == NULL)
 	{
-		free(splited_words);
+		perror("Error");
 		return (NULL);
 	}
 
@@ -25,6 +25,7 @@ char **tokenizer(char *s, char *delim)
 
 	if (splited_words[0] == NULL)
 	{
+		free(splited_words[0]);
 		free(splited_words);
 		return (NULL);
 	}
