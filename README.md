@@ -42,7 +42,7 @@ it will compile the files and then you can execute the hsh program as follows :
 
 ## Files of our Shell!
 ***
-| file | description |
+| File | Description |
 |-----|-----|
 | main.c |Function that checks if our Shell is called in interactive or non-interactive mode.|
 | main.h | Header file with prototypes and structures.|
@@ -192,7 +192,7 @@ Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
 
 ***
 
-## Autors!
+## Authors!
 ***
 **Yazmin Giraldo** - @yazgiraldoa -
 <a href = 'https://www.twitter.com/@yazgiraldoa'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/twitter.svg"/></a>
