@@ -5,12 +5,12 @@ In this project we were assigned to make a functional Shell, with its basic comm
 
 ## Table of contents
 ***
-1. [General info](#general-info)
-2. [How to install?](#How-to-install?)
-3. [Files of our Shell!](#Files-of-our-Shell!)
-4. [Commands that works!](#Commands-that-works!)
-5. [Test cases!](#Test-cases!)
-6. [Authors!](#Authors!)
+1.  [General info](#general-info)
+2.  [How to install?](#how-to-install)
+3.  [Files of our Shell!](#files-of-our-shell)
+4.  [Commands that works!](#commands-that-works)
+5.  [Test cases!](#test-cases)
+6.  [Authors!](#authors)
 
 ***
 
@@ -70,7 +70,7 @@ it will compile the files and then you can execute the hsh program as follows :
 ***
 | Command | Y/N |
 | ------- | --- |
-|   ls    | ✅ | 
+|   ls    | ✅ |
 |   pwd   | ✅ |
 |   cd    | ❌ |
 |   man   | ✅ |
@@ -79,7 +79,7 @@ it will compile the files and then you can execute the hsh program as follows :
 |   cp    | ✅ |
 |  which  | ✅ |
 |  whoami  | ✅ |
-|  uname  | ✅ | 
+|  uname  | ✅ |
 |  passwd | ✅ |
 |   df   | ✅ |
 |  whatis  | ✅ |
@@ -92,10 +92,10 @@ it will compile the files and then you can execute the hsh program as follows :
 |   find   | ✅ |
 |  less  | ✅ |
 |  vim  | ✅ |
-|  grep  | ✅ | 
-|  find   | ✅ | 
+|  grep  | ✅ |
+|  find   | ✅ |
 |  touch  | ✅ |
-|  cat  | ✅ | 
+|  cat  | ✅ |
 |  tail  | ✅ |
 |  head  | ✅ |
 |  chmod  | ✅ |
@@ -130,7 +130,7 @@ drwxrwxr-x  3 yazmin yazmin 4096 ago 18 21:30 printf
 drwxrwxr-x  3 yazmin yazmin 4096 ago 18 10:07 yazmin
 ```
 
-#### pwd 
+#### pwd
 
 ```sh
 cuchufli% pwd
@@ -194,7 +194,7 @@ Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
 
 ## Autors!
 ***
-**Yazmin Giraldo** - @yazgiraldoa - 
+**Yazmin Giraldo** - @yazgiraldoa -
 <a href = 'https://www.twitter.com/@yazgiraldoa'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/twitter.svg"/></a>
 <a href = 'https://www.github.com/yazgiraldoa'> <img width = '18px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a>
 

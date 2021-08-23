@@ -22,6 +22,9 @@ char *find_path(char **tokens)
 		}
 	}
 
+	if (path == NULL)
+		return (NULL);
+
 	path_tokenized = tokenizer(path, "=:");
 
 	for (j = 1; path_tokenized[j]; j++)

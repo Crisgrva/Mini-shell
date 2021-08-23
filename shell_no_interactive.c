@@ -30,16 +30,14 @@ int shell_no_interactive(int ac, char **av)
 			continue;
 		}
 		if (access(tokens[0], F_OK) != 0)
-		{
-			path = find_path(tokens);
+		{	path = find_path(tokens);
 			if (path == NULL)
 			{
 				free(path);
 				numerr++;
 				path_error(numerr, tokens, name_file);
 				exit(127);
-			}
-		}
+			}}
 		else
 			path = tokens[0];
 		if (fork_process(path, tokens, environ) == 1)
