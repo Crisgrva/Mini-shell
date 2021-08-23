@@ -1,9 +1,269 @@
-.TH man_1_simple_shell "August 21, 2021"  "1.0" "Simple Shell man Page"
-.SH NAME
-.b Simple Shell
-.SH SYNOPSIS
-simple_shell [command] [arguments] [name ]
-.SH DESCRIPTION
-The shell is the computer program that provides a user interface to access the services of the operating system.
+.\" Manpage for simple_shell(1)).
+.TH Simple_shell 1 "23 August 2021" "1.0" "simple_shell(1) man page"
 
-#Examples
+.SH NAME
+\fBSimple_shell\fP \- command interpreter (shell)
+
+.SH SYNOPSIS
+.PD 0
+.TP
+\fBSimple_shell\fP [-command] [-o option]...
+.PD
+
+.SH DESCRIPTION
+
+\fBSimple_shell\fP is a UNIX command interpreter  (shell)  usable  as  an  interactive login  shell  and as a shell script command processor. Execute commands read from a command line string, the standard input, or a specified file.
+
+.SH AVAILABILITY
+Simple_shell is available from the following HTTP
+
+\fBhttps://github.com/yazgiraldoa/simple_shell\fP
+
+The  up-to-date source code is available via Git from GitHub.  See
+\fBhttps://github.com/yazgiraldoa/simple_shell\fP  for  details.   A   summary   of
+instructions  for  the  archive  can  be  found  at the README file.
+
+.SH COMPATILIBITY
+Simple_shell tries to emulate sh when invoked as sh, to run it you must clone the repository, compile and run the compiled file as follows:
+.PP
+\fBgcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh ; ./hsh\fP
+.PP
+\fBSome built ins implemented are:\fP
+.PD 0
+.TP
+- \fBexit\fP    exits the shell                   \fBusage:\fP exit
+.TP
+- \fBenv\fP     prints the current environment    \fBusage:\fP env
+.PD
+.PP
+\fBSome commands tested:\fP
+.PD 0
+.TP
+- \fBls\fP        list directory contents
+.TP
+- \fBpwd\fP       print name of current/working directory
+.TP
+- \fBman\fP       an interface to the system reference manuals
+.TP
+- \fBhostname\fP  show or set the system's host name
+.TP
+- \fBclear\fP     clear the terminal screen
+.TP
+- \fBcp\fP        copy files and directories
+.TP
+- \fBwhich\fP     shows the full path of (shell) commands.
+.TP
+- \fBwhoami\fP    print effective userid
+.TP
+- \fBuname\fP     print system information
+.TP
+- \fBpasswd\fP    change user password
+.TP
+- \fBdf\fP        report file system disk space usage
+.TP
+- \fBwhatis\fP    display one-line manual page descriptions
+.TP
+- \fBtop\fP       display Linux processes
+.TP
+- \fBdiff\fP      compare files line by line
+.TP
+- \fBsudo\fP      execute a command as another user
+.TP
+- \fBlocate\fP    find files by name
+.TP
+- \fBbasename\fP  strip directory and suffix from filenames
+.TP
+- \fBfind\fP      search for files in a directory hierarchy
+.TP
+- \fBless\fP      opposite of more
+.TP
+- \fBvim\fP       open VIM, a programmer's text editor
+.TP
+- \fBgrep\fP      print lines that match patterns
+.TP
+- \fBtouch\fP     change file timestamps
+.TP
+- \fBcat\fP       concatenate files and print on the standard output
+.TP
+- \fBtail\fP      output the last part of files
+.TP
+- \fBhead\fP      output the first part of files
+.TP
+- \fBchmod\fP     change file mode bits
+.TP
+- \fBdu\fP        estimate file space usage
+.TP
+- \fBas\fP        Mac OS X Mach-O GNU-based assemblers
+.TP
+- \fBmv\fP        move (rename) files
+.TP
+- \fBrm\fP        remove files or directories
+.TP
+- \fBmkdir\fP     make directories
+.TP
+- \fBrmdir\fP     remove directories
+.PD
+
+.SH FILES
+.PD 0
+.TP
+_itoa.c
+.TP
+_strcat.c
+.TP
+_strcmp.c
+.TP
+_strdup.c
+.TP
+_strlen.c
+.TP
+_strncmp.c
+.TP
+builtins.c
+.TP
+count_words.c
+.TP
+error_messages.c
+.TP
+find_path.c
+.TP
+fork_process.c
+.TP
+free_all.c
+.TP
+handle_sigint.c
+.TP
+main.c
+.TP
+main.h
+.TP
+prompt.c
+.TP
+shell_interactive.c
+.TP
+shell_no_interactive.c
+.TP
+tokenizer.c
+.TP
+README.md
+.TP
+man_1_simple_shell
+.TP
+AUTHORS
+.PD
+
+.SH Examples
+.PD 0
+.TP
+\fBInteractive shell\fP
+.TP
+
+\fB- Example 1\fP
+
+.TP
+\fBcuchufli%\fP pwd
+.TP
+/home/simple-shell
+.TP
+\fBcuchufli%\fP
+.PD
+
+.PD 0
+.TP
+\fB- Example 2\fP
+
+.TP
+\fBcuchufli%\fP ls -l
+.TP
+total 280
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    196 Aug 21 18:05 AUTHORS
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff   6839 Aug 21 18:05 README.md
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    904 Aug 21 18:05 _itoa.c
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    378 Aug 21 18:05 _strcat.c
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    499 Aug 21 18:05 _strcmp.c
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    537 Aug 21 18:05 _strdup.c
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    234 Aug 21 18:05 _strlen.c
+.TP
+-rw-rw-r--@ 1 cristiangranada  staff    443 Aug 21 18:05 _strncmp.c
+.TP
+\fBcuchufli%\fP
+.PD
+
+.PD 0
+.TP
+\fBNon-interactive shell\fP
+
+.TP
+\fB- Example 1\fP
+
+.TP
+echo "pwd
+.TP
+ls
+.TP
+whoami
+.TP
+/sys
+.TP
+head -1 main.c" | ./hsh
+.PD
+
+.PD 0
+.TP
+/home/simple-shell
+.TP
+AUTHORS      _strncmp.c	         free_all.c	          shell_interactive.c
+.TP
+README.md    builtins.c	         handle_sigint.c	  shell_no_interactive.c
+.TP
+_itoa.c      cmake-build-debug   hsh		          tokenizer.c
+.TP
+_strcat.c    count_words.c       main.c		          trash
+.TP
+_strcmp.c    error_messages.c    main.h
+.TP
+_strdup.c    find_path.c	     man_1_simple_shell
+.TP
+_strlen.c    fork_process.c      prompt.c
+.TP
+root
+.TP
+./hsh: 4: /sys: Permission denied
+.PD
+
+.PD 0
+.TP
+\fB\- Example 2\fP
+
+.TP
+echo "ls -la .." | ./hsh
+
+.TP
+total 12
+.TP
+drwxr-xr-x 1 root root 4096 Aug 23 10:05 .
+.TP
+drwxr-xr-x 1 root root 4096 Aug 17 18:24 ..
+.TP
+drwxr-xr-x 7 root root 4096 Aug 23 10:06 simple-shell
+.PD
+
+.SH AUTHORS
+.PP
+.PD 0
+.TP
+\fBSimple_shell\fP was written by:
+.TP
+Yazmin Giraldo   \fB<https://github.com/yazgiraldoa>\fP
+.TP
+Ibethe Ramada    \fB<https://github.com/IbetheRamada>\fP
+.TP
+Cristian Granada \fB<https://github.com/Crisgrva>\fP
+.PD
