@@ -68,7 +68,7 @@ it will compile the files and then you can execute the hsh program as follows :
 
 ## How does it work?
 ***
-![](https://github.com/yazgiraldoa/printf/blob/master/Flowchart.png)
+![](https://github.com/Crisgrva/Mini-shell/blob/main/Others/Simple%20Shell%20diagram.png)
 
 ***
 
