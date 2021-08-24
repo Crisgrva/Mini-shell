@@ -1,0 +1,40 @@
+#!/bin/bash   --> YAZ
+
+echo "ls
+pwd" | ./hsh
+echo "ls
+pwd" | sh
+echo "       ls      " | ./hsh
+echo "       ls      " | sh
+echo "
+" | ./hsh
+echo "
+" | sh
+
+
+#!/bin/bash --> VALE
+echo "ls -la .." | ./hsh
+echo "ls -la .." | sh
+echo "
+pwd" | ./hsh
+echo "
+pwd" | sh
+echo "" | ./hsh
+echo "" | sh
+
+
+#!/bin/bash --> CRIS
+echo "      " | ./hsh
+echo "      " | sh
+echo "      echo hola" | ./hsh
+echo "      echo hola" | sh
+echo "pwd
+ls
+whoami
+/sys
+head -1 main.c" | ./hsh
+echo "pwd
+ls
+whoami
+/sys
+head -1 main.c" | sh

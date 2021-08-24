@@ -8,9 +8,10 @@ In this project we were assigned to make a functional Shell, with its basic comm
 1.  [General info](#general-info)
 2.  [How to install?](#how-to-install)
 3.  [Files of our Shell!](#files-of-our-shell)
-4.  [Commands that works!](#commands-that-works)
-5.  [Test cases!](#test-cases)
-6.  [Authors!](#authors)
+4.  [How does it work?](#how-does-it-work)
+5.  [Commands that works!](#commands-that-works)
+6.  [Test cases!](#test-cases)
+7.  [Authors!](#authors)
 
 ***
 
@@ -65,6 +66,11 @@ it will compile the files and then you can execute the hsh program as follows :
 
 ***
 
+## How does it work?
+***
+![](https://github.com/yazgiraldoa/printf/blob/master/Flowchart.png)
+
+***
 
 ## Commands that works!
 ***

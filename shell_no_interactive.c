@@ -36,7 +36,7 @@ int shell_no_interactive(int ac, char **av)
 				free(path);
 				numerr++;
 				path_error(numerr, tokens, name_file);
-				exit(127);
+				continue;
 			}}
 		else
 			path = tokens[0];
